@@ -27,13 +27,19 @@ class Shape {
   get color() {return this.#color;}
 }
 
-// function
+let shape = shapes.value;
+let color = colors.value;
+
+const object = new Shape(shape, color);
+const array = [];
 
 function getInfo() {
   let shape = shapes.value;
   let color = colors.value;
   
-  console.log(`shape: ${shape} | color: ${color}`)
+  for (let i = 0; i < array.length; i++) {
+    console.log(`index: ${i} | shape: ${shape} | color: ${color}`);
+  }
 }
 
 function createShape() {
@@ -44,22 +50,14 @@ function createShape() {
   
   container.appendChild(div).classList.add(shape);
   div.style.backgroundColor = color;
+  div.style.cursor = 'pointer';
   
   div.addEventListener('click', () => {
     getInfo();
   });
 }
 
-// addEventListener
-
 create.addEventListener('click', () => {
-  let shape = shapes.value;
-  let color = colors.value;
-  
-  const object = new Shape(shape, color);
-  const array = [];
-  
   array.push(object);
-  
   createShape();
 });
