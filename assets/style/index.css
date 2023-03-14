@@ -1,7 +1,26 @@
 @import url('./reset.css');
 
+:root {
+  --blue: #09f;
+  --green: #9f0;
+  --orange: #f90;
+  --pink: #f09;
+  --purple: #90f;
+}
+
 /* class */
+.circle {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+
 .container {
   margin-inline: auto;
   width: min(100% - 30px, 1080px);
+}
+
+.square {
+  width: 50px;
+  height: 50px;
 }
