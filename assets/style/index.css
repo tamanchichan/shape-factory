@@ -58,6 +58,7 @@ body {
 .square.index {background-color: #000;}
 
 .output {
+  font-size: 20px;
   height: 30px;
   line-height: 30px;
   margin-top: 20px;
