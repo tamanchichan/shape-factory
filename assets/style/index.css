@@ -1,11 +1,22 @@
 @import url('./reset.css');
 
 :root {
+  --body-bg-color: #171a22;
+  --body-color: #fcfcfc;
   --blue: #09f;
   --green: #9f0;
   --orange: #f90;
   --pink: #f09;
   --purple: #90f;
+}
+/* HTML */
+html {
+  text-shadow: 0px 0px 2px #000;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--body-color);
 }
 
 /* class */
