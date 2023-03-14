@@ -10,6 +10,10 @@ const create = document.querySelector('.button-create');
 const container = document.querySelector('.grid');
 const shapes = document.querySelector('#shapes');
 const colors = document.querySelector('#colors')
+const output = document.querySelector('.output');
+const div = document.querySelector('div');
+// const div = document.createElement('div');
+// const index = document.querySelector('.index');
 
 class Shape {
   #name;
@@ -25,39 +29,49 @@ class Shape {
   
   set color(value) {this.#color = value;}
   get color() {return this.#color;}
-}
-
-let shape = shapes.value;
-let color = colors.value;
-
-const object = new Shape(shape, color);
-const array = [];
-
-function getInfo() {
-  let shape = shapes.value;
-  let color = colors.value;
   
-  for (let i = 0; i < array.length; i++) {
-    console.log(`index: ${i} | shape: ${shape} | color: ${color}`);
+  getInfo() {
+    if(this.#color === '#09f') {
+      return `${this.#name} blue`;
+    } if (this.#color === '#9f0') {
+      return `${this.#name} green`;
+    } if (this.#color === '#f90') {
+      return `${this.#name} orange`;
+    } if (this.#color === '#f09') {
+      return `${this.#name} pink`;
+    } if (this.#color === '#90f') {
+      return `${this.#name} purple`
+    }
+    // return `${this.#name} ${this.#color}`
   }
 }
 
-function createShape() {
-  const div = document.createElement('div');
-  
-  let shape = shapes.value;
-  let color = colors.value;
-  
-  container.appendChild(div).classList.add(shape);
-  div.style.backgroundColor = color;
-  div.style.cursor = 'pointer';
-  
-  div.addEventListener('click', () => {
-    getInfo();
-  });
-}
+let array = [];
 
 create.addEventListener('click', () => {
-  array.push(object);
-  createShape();
+  if (array.length < 20) {
+    function createShape() {
+      let shape = shapes.value;
+      let color = colors.value;
+      const div = document.createElement('div');
+      
+      container.appendChild(div).classList.add(shape);
+      div.style.backgroundColor = color;
+      div.style.cursor = 'pointer';
+      
+      div.addEventListener('click', () => {
+        output.innerText = `Unit ${array.indexOf(newShape) + 1}: ${newShape.getInfo()}`
+      });
+    }
+    
+    createShape();
+    
+    let shape = shapes.value;
+    let color = colors.value;
+    
+    const newShape = new Shape(shape, color);
+    array.push(newShape);
+  } else {
+    return output.innerText = 'Cannot store more than 20 shapes'
+  }
 });

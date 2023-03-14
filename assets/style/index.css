@@ -52,7 +52,16 @@ body {
   display: grid;
   gap: 10px;
   grid-template-columns: auto auto auto auto auto;
-  justify-content: space-around;
+}
+
+.circle.index {background-color: #000;}
+.square.index {background-color: #000;}
+
+.output {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .square {
