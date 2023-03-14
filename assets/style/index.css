@@ -36,7 +36,7 @@ body {
 
 .circle {
   border-radius: 100%;
-  background-color: var(--blue);
+  /* background-color: var(--blue); */
   width: 75px;
   height: 75px;
 }
