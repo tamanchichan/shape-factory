@@ -11,9 +11,6 @@ const container = document.querySelector('.grid');
 const shapes = document.querySelector('#shapes');
 const colors = document.querySelector('#colors')
 const output = document.querySelector('.output');
-const div = document.querySelector('div');
-// const div = document.createElement('div');
-// const index = document.querySelector('.index');
 
 class Shape {
   #name;
