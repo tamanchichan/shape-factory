@@ -27,6 +27,8 @@ class Shape {
   get color() {return this.#color;}
 }
 
+// function
+
 function getInfo() {
   let shape = shapes.value;
   let color = colors.value;
@@ -47,6 +49,8 @@ function createShape() {
     getInfo();
   });
 }
+
+// addEventListener
 
 create.addEventListener('click', () => {
   let shape = shapes.value;
