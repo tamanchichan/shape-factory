@@ -29,15 +29,15 @@ class Shape {
   
   getInfo() {
     if(this.#color === '#09f') {
-      return `${this.#name} blue`;
+      return `blue ${this.#name}`;
     } if (this.#color === '#9f0') {
-      return `${this.#name} green`;
+      return `green ${this.#name}`;
     } if (this.#color === '#f90') {
-      return `${this.#name} orange`;
+      return `orange ${this.#name}`;
     } if (this.#color === '#f09') {
-      return `${this.#name} pink`;
+      return `pink ${this.#name}`;
     } if (this.#color === '#90f') {
-      return `${this.#name} purple`
+      return `purple ${this.#name}`;
     }
     // return `${this.#name} ${this.#color}`
   }
@@ -47,6 +47,12 @@ let array = [];
 
 create.addEventListener('click', () => {
   if (array.length < 20) {
+    let shape = shapes.value;
+    let color = colors.value;
+    const newShape = new Shape(shape, color);
+    
+    array.push(newShape);
+    
     function createShape() {
       let shape = shapes.value;
       let color = colors.value;
@@ -62,12 +68,6 @@ create.addEventListener('click', () => {
     }
     
     createShape();
-    
-    let shape = shapes.value;
-    let color = colors.value;
-    
-    const newShape = new Shape(shape, color);
-    array.push(newShape);
   } else {
     return output.innerText = 'Cannot store more than 20 shapes'
   }
