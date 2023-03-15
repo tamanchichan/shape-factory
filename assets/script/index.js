@@ -11,6 +11,7 @@ const container = document.querySelector('.grid');
 const shapes = document.querySelector('#shapes');
 const colors = document.querySelector('#colors')
 const output = document.querySelector('.output');
+const translate = document.querySelector('.trasnlate');
 
 class Shape {
   #name;
@@ -59,6 +60,7 @@ create.addEventListener('click', () => {
       const div = document.createElement('div');
       
       container.appendChild(div).classList.add(shape);
+      div.classList.add('translate');
       div.style.backgroundColor = color;
       div.style.cursor = 'pointer';
       
