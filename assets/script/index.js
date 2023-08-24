@@ -1,8 +1,10 @@
+// --black: #000;
 // --blue: #09f;
 // --green: #9f0;
 // --orange: #f90;
 // --pink: #f09;
 // --purple: #90f;
+// --red: #f00;
 
 'use strict';
 
@@ -14,33 +16,37 @@ const output = document.querySelector('.output');
 const translate = document.querySelector('.trasnlate');
 
 class Shape {
-  #name;
+  #shape;
   #color;
   
-  constructor(name, color) {
-    this.#name = name;
+  constructor(shape, color) {
+    this.#shape = shape;
     this.#color = color;
   }
   
-  set name(shape) {this.#name = shape;}
-  get name() {return this.#name};
+  set shape(value) {this.#shape = value;}
+  get shape() {return this.#shape};
   
   set color(value) {this.#color = value;}
   get color() {return this.#color;}
   
   getInfo() {
-    if(this.#color === '#09f') {
-      return `blue ${this.#name}`;
+    if (this.#color === '#000') {
+      return `black ${this.#shape}`;
+    } if(this.#color === '#09f') {
+      return `blue ${this.#shape}`;
     } if (this.#color === '#9f0') {
-      return `green ${this.#name}`;
+      return `green ${this.#shape}`;
     } if (this.#color === '#f90') {
-      return `orange ${this.#name}`;
+      return `orange ${this.#shape}`;
     } if (this.#color === '#f09') {
-      return `pink ${this.#name}`;
+      return `pink ${this.#shape}`;
     } if (this.#color === '#90f') {
-      return `purple ${this.#name}`;
+      return `purple ${this.#shape}`;
+    } if (this.#color === '#f00') {
+      return `red ${this.#shape}`;
     }
-    // return `${this.#name} ${this.#color}`
+    // return `${this.#shape} ${this.#color}`
   }
 }
 

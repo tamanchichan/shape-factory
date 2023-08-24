@@ -8,11 +8,13 @@
   --button-color: #fcfcfc;
   --select-bg-color: #272a31;
   --select-color: #fcfcfc;
+  --black: #000;
   --blue: #09f;
   --green: #9f0;
   --orange: #f90;
   --pink: #f09;
   --purple: #90f;
+  --red: #f00;
 }
 /* HTML */
 body {
